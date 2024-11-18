@@ -1,0 +1,241 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor Detallada</title>
+    
+    <!-- Redirección a otra página (cambia el URL según lo que necesites) -->
+    <meta http-equiv="refresh" content="5; url=CartitaRominita.html"> <!-- Redirige después de 5 segundos -->
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: #e60073;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 70%;
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
+
+        .title.visible {
+            top: 10%;
+            opacity: 1;
+        }
+
+        .envelope {
+            position: relative;
+            width: 220px;
+            height: 150px;
+            background: #e60073;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 110px solid transparent;
+            border-right: 110px solid transparent;
+            border-bottom: 75px solid #c70063;
+        }
+
+        .envelope.hidden {
+            opacity: 0;
+            transform: scale(0.5);
+            pointer-events: none;
+        }
+
+        .letter {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: #fffdf5;
+            width: 220px;
+            height: 300px;
+            border-radius: 10px;
+            border: 2px solid #e1c699;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            overflow-y: auto;
+            transition: transform 1s ease-out, opacity 0.5s ease-out, top 0.5s ease-out;
+        }
+
+        .letter.visible {
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #e60073;
+            animation: floatUp 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) translateY(-300px);
+                opacity: 0;
+            }
+        }
+
+        .letter h1 {
+            font-family: 'Cursive', sans-serif;
+            font-size: 1.7rem;
+            color: #e60073;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .letter p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #5a5a5a;
+            text-align: justify;
+            margin: 10px 0;
+        }
+
+        /* Media Queries para móviles */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem; /* Reduce el tamaño del título en móviles */
+                top: 20%; /* Ajusta la posición del título */
+            }
+
+            .envelope {
+                width: 180px; /* Reduce el tamaño del sobre */
+                height: 120px; /* Reduce la altura del sobre */
+            }
+
+            .letter {
+                width: 200px; /* Ajusta el ancho de la carta */
+                height: 250px; /* Ajusta la altura de la carta */
+            }
+
+            .letter h1 {
+                font-size: 1.5rem; /* Ajusta el tamaño de la letra */
+            }
+
+            .letter p {
+                font-size: 0.9rem; /* Ajusta el tamaño de los párrafos */
+            }
+        }
+
+        /* Para pantallas muy pequeñas (como teléfonos en modo retrato) */
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem; /* Ajusta aún más el tamaño del título */
+            }
+
+            .envelope {
+                width: 150px; /* Reduce el tamaño del sobre aún más */
+                height: 100px; /* Ajusta la altura */
+            }
+
+            .letter {
+                width: 180px; /* Reduce el tamaño de la carta */
+                height: 220px; /* Ajusta la altura */
+            }
+
+            .letter h1 {
+                font-size: 1.3rem; /* Reduce el tamaño del encabezado */
+            }
+
+            .letter p {
+                font-size: 0.8rem; /* Reduce el tamaño de los párrafos */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title" id="title">Te amo, Pulguitai!</div>
+    <div class="envelope" id="envelope"></div>
+    <div class="letter" id="letter">
+        <h1>Monita</h1>
+        <p>
+            Se que pronto me voy del pais, por eso quiero 
+        </p>
+        <p>
+            por todo tu cariño, amor y buenos momentos, risas y sobre
+       
+        </p>
+        <p>
+            criticar JUNTOS  ¡Te amo un mundo!
+        </p>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const letter = document.getElementById('letter');
+        const title = document.getElementById('title');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.add('hidden'); // Oculta el sobre
+            letter.classList.add('visible'); // Muestra la carta
+            title.classList.add('visible'); // Mueve el título hacia arriba
+            releaseHearts(); // Inicia la animación de corazones
+        });
+
+        function releaseHearts() {
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.textContent = '❤️';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+                heart.style.fontSize = `${Math.random() * 2 + 1}rem`;
+                document.body.appendChild(heart);
+
+                // Eliminar el corazón después de la animación
+                heart.addEventListener('animationend', () => {
+                    heart.remove();
+                });
+            }
+        }
+    </script>
+</body>
+</html>
